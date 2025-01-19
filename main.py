@@ -1,4 +1,5 @@
-from console import console
+from rich.console import Console
+console = Console()
 import requests
 
 WELCOME_MESSAGE = f'\n[white on blue] WELCOME TO WORDLE[/]\n'
