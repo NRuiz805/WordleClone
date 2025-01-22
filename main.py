@@ -1,6 +1,6 @@
-from rich.console import Console
+from rich.console import Console #type:ignore
 console = Console()
-import requests
+import requests #type:ignore
 
 WELCOME_MESSAGE = f'\n[white on blue] WELCOME TO WORDLE[/]\n'
 GUESSES = 6
@@ -16,6 +16,7 @@ def incorrect_letter(letter):
     return f'[black on red]{letter}[/]'
 
 chosen_word = ''
+player_guess = ''
 
 while chosen_word == '':
     chosen_word = requests.get('https://random-word-api.herokuapp.com/word?length=5')
@@ -26,3 +27,5 @@ while chosen_word == '':
 if __name__ == '__main__':
     console.print(WELCOME_MESSAGE)
     console.print(PLAYER_INSTRUCTIONS)
+    while GUESSES > 0:
+        
