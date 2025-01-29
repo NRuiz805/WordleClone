@@ -4,7 +4,7 @@ import requests #type:ignore
 
 WELCOME_MESSAGE = f'\n[white on blue] WELCOME TO WORDLE[/]\n'
 GUESSES = 6
-PLAYER_INSTRUCTIONS = f'You may start guessing, the word is 5 letters long. You have {GUESSES} chances to guess the word. Good luck!'
+PLAYER_INSTRUCTIONS = f'You may start guessing, the word is [white on blue]5[/] letters long. You have [white on blue]{GUESSES}[/] chances to guess the word. Good luck!'
 
 def correct_place(letter):
     return f'[black on green]{letter}[/]'
@@ -27,5 +27,11 @@ while chosen_word == '':
 if __name__ == '__main__':
     console.print(WELCOME_MESSAGE)
     console.print(PLAYER_INSTRUCTIONS)
-    while GUESSES > 0:
-        
+    while GUESSES > 0: #WHILE PLAYER STILL HAS GUESSES
+        #TAKE GUESS
+        player_guess = input()
+        #VALIDATE GUESS
+        #GUESS MUST:
+        # HAVE 5 LETTERS
+        while not len(player_guess) == 5:
+            console.print()
