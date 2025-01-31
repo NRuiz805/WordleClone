@@ -34,4 +34,10 @@ if __name__ == '__main__':
         #GUESS MUST:
         # HAVE 5 LETTERS
         while not len(player_guess) == 5:
-            console.print()
+            console.print(f'[white on red]Please enter a 5 letter word[/]')
+            continue
+        #BE A REAL WORD
+        r = requests.get('https://en.wiktionary.org/api/rest_v1/page/definition/' + player_guess)
+        if r.status_code == 404:
+            console.print(f'[white on red]Please enter a real word[/]')
+            continue
